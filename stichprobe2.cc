@@ -9,6 +9,8 @@ int main(){
 
     double a,var_half,c;
     double b=0;
+    double mean_mean = 0;
+    double var_mean = 0;
 
 for (int i = 0; i < 26; i++){
     double mean= 0;
@@ -20,13 +22,17 @@ for (int i = 0; i < 26; i++){
     for (int i = 0; i < 9; i++){
         inputfile2 >> c;
         var_half = (c-mean)*(c-mean);
-        var += var_half;
+        var += var_half/9;
     }
     std::cout << "Mean: " << mean << std::endl;
-    std::cout << "Variance: " << var/9 << std::endl;
+    std::cout << "Variance: " << var << std::endl;
     outputfile << "" << mean << std::endl;
-    outputfile2 << "" << var/9 << std::endl;
+    outputfile2 << "" << var << std::endl;
+    mean_mean += mean/26;
+    var_mean += var/26;
 }
+std::cout << "Mean of mean: " << mean_mean << std::endl;
+std::cout << "Mean of Variance: " << var_mean << std::endl;
 inputfile.close();
 inputfile2.close();
 outputfile.close();
