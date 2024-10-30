@@ -9,7 +9,7 @@ int main(){
     {
     sum = a+b;
     std::cout << "Summe: " << sum << std::endl;
-    outputfile << " " << sum << std::endl;
+    outputfile << "" << sum << std::endl;
     }
     inputfile.close();
     outputfile.close();
